@@ -28,4 +28,11 @@ class User extends Authenticatable
     public function hasRole($roles){
         return in_array($this->role->code, $roles);
     }
+
+    public function carts(){
+        $this->hasMany(Cart::class);
+    }
+    public function orders(){
+        $this->hasMany(Order::class);
+    }
 }
